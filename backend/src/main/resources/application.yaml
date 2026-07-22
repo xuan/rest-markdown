@@ -1,0 +1,9 @@
+server:
+  port: 8080
+
+logging:
+  level:
+    root: INFO
+    com.xuan.restmarkdown: DEBUG
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} %-5level %logger{36} - %msg%n"

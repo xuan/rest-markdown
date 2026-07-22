@@ -1,0 +1,39 @@
+openapi: 3.0.3
+info:
+  title: REST Markdown API
+  version: 1.0.0
+paths:
+  /api/markdown:
+    post:
+      operationId: generateMarkdown
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MarkdownRequest'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MarkdownResponse'
+components:
+  schemas:
+    MarkdownRequest:
+      type: object
+      required:
+        - prompt
+      properties:
+        prompt:
+          type: string
+          minLength: 1
+    MarkdownResponse:
+      type: object
+      required:
+        - markdown
+      properties:
+        markdown:
+          type: string
+          minLength: 1
