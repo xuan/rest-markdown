@@ -2,8 +2,27 @@
 
 Natural-language prompt → REST API markdown docs. Spring Boot backend + Next.js frontend.
 
-Working conventions live here; the spec (API contract, request flow, config, gaps)
-is [docs/SPEC.md](docs/SPEC.md) — keep it current when behavior changes.
+Working conventions live in this file. The rest of the docs split by the question they
+answer — see the map below.
+
+## Documentation map
+
+- **This file (CLAUDE.md)** — *how code is written*: conventions, build/test, and the
+  index that routes to the others.
+- **[docs/RULES.md](docs/RULES.md)** — *what the product must do*: business rules and
+  functionality. **Source of truth for behavior** — code is written to satisfy it.
+- **[docs/DESIGN.md](docs/DESIGN.md)** — *how it's built*: architecture, layer
+  boundaries, key decisions, intended evolution.
+- **[docs/SPEC.md](docs/SPEC.md)** — *what's actually shipped now*: exact API contract,
+  request flow, config, known gaps. A derived reference, not intent.
+
+**Precedence when docs disagree:** RULES wins on behavior, DESIGN on architecture,
+CLAUDE on code style. SPEC records reality — if it contradicts RULES, that's a gap to
+close by fixing code + SPEC, not RULES.
+
+**Order for a feature:** read CLAUDE.md → RULES.md (what) → DESIGN.md (where it fits) →
+implement per these conventions → update SPEC.md (and the RULES capability status). To
+change behavior, edit RULES.md *first*, then implement.
 
 ## Backend (Spring Boot 4.1, Java 25, Maven)
 
