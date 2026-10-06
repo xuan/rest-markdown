@@ -1,5 +1,9 @@
 # REST-Markdown — Spec
 
+The contract as actually shipped — a derived reference. The source of truth for *what*
+the product must do is [RULES.md](RULES.md); the architecture and its rationale are in
+[DESIGN.md](DESIGN.md).
+
 ## Purpose
 
 Turn a natural-language prompt describing an HTTP endpoint into a markdown document
